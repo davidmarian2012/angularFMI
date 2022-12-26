@@ -5,14 +5,14 @@
         <h3>by enthusiasts for enthusiasts</h3>
     </div>
 
-    <div class="right-container">
+    <div class="right-container" [formGroup]="form">
         <div class="input-row">
-            <label for="username">Username</label> <input>
+            <label for="username">Username</label> <input formControlName="username">
         </div>
         <div class="input-row">
-            <label for="password">Password</label> <input>
+            <label for="password">Password</label> <input formControlName="password">
         </div>
         <button type="button">Login</button>
-        <button type="button" class="create-btn"><a routerLink="/register">Create account</a></button>
+        <button type="button" class="create-btn" routerLink="/register">Create account</button>
     </div>
 </div>

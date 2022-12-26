@@ -32,7 +32,6 @@ input{
     height: 40px;
     margin-bottom: 20px;
     padding: 5px;
-    border: 2px solid;
 }
 
 button{
@@ -43,6 +42,17 @@ button{
     background-color: rgb(129, 171, 185);
     font-weight: 700;
     cursor: pointer;
+}
+
+.create-btn{
+    border: 2px solid rgb(129, 171, 185);
+    background-color: #fff;
+    margin-top: 30px;
+}
+
+a{
+    text-decoration: none;
+    color: #000;
 }
 
 .input-row{
