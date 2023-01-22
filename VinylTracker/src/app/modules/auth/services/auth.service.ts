@@ -9,6 +9,9 @@ import { HttpService } from '../../shared/services/http.service';
 })
 export class AuthService {
 
+  isLoggedIn: boolean = false;
+  currentUser: string = "";
+
   constructor(private httpService: HttpService, private router: Router) { }
 
   register(userInput: any): Observable<any> {

@@ -26,15 +26,18 @@ export class LoginComponent implements OnInit {
   })
 
   loginUser(): void{
-    this.authService.login(this.form.value)
-      .pipe(first()).subscribe(
-        user => {
-          console.log("hello");
-        },
-        () => {
-          this.router.navigate(['/dashboard']);
-        }
-      );
+    // this.authService.login(this.form.value)
+    //   .pipe(first()).subscribe(
+    //     user => {
+    //       console.log("hello");
+    //     },
+    //     () => {
+    //       this.router.navigate(['/dashboard']);
+    //     }
+    //   );
+    this.router.navigate(['/dashboard']);
+    this.authService.isLoggedIn = true;
+    this.authService.currentUser = this.form.get('username')?.value!;
   }
 
 }

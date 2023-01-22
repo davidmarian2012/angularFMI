@@ -1,4 +1,19 @@
-<header>
-    <a class="register-anchor">Register</a>
-    <a class="login-anchor">Login</a>
-</header>
+header{
+    height: 10vh;
+    background-color: rgb(38, 55, 61);
+    display: flex;
+    align-items: center;
+}
+
+h3{
+    margin-left: 100px;
+    color:#fff;
+    font-weight: 500;
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
+    position: absolute;
+    right: 100px;
+}

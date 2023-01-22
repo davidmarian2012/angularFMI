@@ -9,7 +9,7 @@
 }
 
 .left-container{
-    background-color: rgb(129, 171, 185);
+    background-color: rgb(54, 87, 99);
     width: 50%;
     height: 100vh;
     display: flex;
@@ -25,40 +25,61 @@
     align-items: center;
     width: 50%;
     height: 100vh;
+    background-color: rgb(214, 214, 214);
 }
 
 input{
-    width: 200px;
+    width: 225px;
     height: 40px;
-    margin-bottom: 20px;
     padding: 5px;
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border: 0;
 }
 
 button{
-    width: 200px;
+    width: 225px;
     height: 40px;
     margin-top: 20px;
-    border: 2px solid rgb(79, 107, 116);
-    background-color: rgb(129, 171, 185);
+    border: 0;
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    background-color: rgb(54, 87, 99);
     font-weight: 700;
+    color: #fff;
     cursor: pointer;
 }
 
 .create-btn{
-    border: 2px solid rgb(129, 171, 185);
-    background-color: #fff;
+    border: 2px solid rgb(54, 87, 99);
+    background-color: rgb(214, 214, 214);
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     margin-top: 30px;
+    color: rgb(54, 87, 99);
 }
 
 .input-row{
     display: flex;
     flex-direction: column;
     gap: 2px;
-    font-weight: 700;
+    font-weight: 500;
+    font-size: 14px;
 }
 
 
 a{
     text-decoration: none;
     color: #000;
+}
+
+.error-message{
+    width: 225px;
+    margin: 3px 0 10px 0;
+    font-size: 10px;
+    color: red;
+}
+
+h1 {
+    color: #fff;
 }
