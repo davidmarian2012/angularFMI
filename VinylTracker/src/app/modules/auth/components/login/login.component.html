@@ -1,18 +1,28 @@
 <div class="login-container">
     <div class="left-container">
         <img src="../../../../../assets/logo.png" alt="Logo" class="logo-img">
-        <h1>Welcome to Vinyl Tracker</h1>
+        <h1>Vinyl Tracker</h1>
         <h3>by enthusiasts for enthusiasts</h3>
     </div>
 
     <div class="right-container" [formGroup]="form">
         <div class="input-row">
             <label for="username">Username</label> <input formControlName="username">
+            <div class="error-message">
+                <div *ngIf="form.controls['username'].errors?.['required'] && form.controls['username'].dirty">
+                    Username is required.
+                </div>
+            </div>
         </div>
         <div class="input-row">
-            <label for="password">Password</label> <input formControlName="password">
+            <label for="password">Password</label> <input formControlName="password" type="password">
+            <div class="error-message">
+                <div *ngIf="form.controls['password'].errors?.['required'] && form.controls['password'].dirty">
+                    Password is required.
+                </div>
+            </div>
         </div>
-        <button type="button">Login</button>
+        <button type="submit" [disabled]="!form.valid" (click)="loginUser()">Login</button>
         <button type="button" class="create-btn" routerLink="/register">Create account</button>
     </div>
 </div>
