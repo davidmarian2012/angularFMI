@@ -5,14 +5,9 @@
     flex-direction: column;
 }
 
-.top-h2{
-    margin-top: 80px;
-}
-
 h2{
     margin-left: 300px;
-    margin-top: 40px;
-    font-size: 22px;
+    margin-top: 20px;
 }
 
 .collection{
@@ -21,11 +16,11 @@ h2{
     display: flex;
     width: 70%;
     flex-wrap: wrap;
+    gap: 20px;
 }
 
 .vinyl-row{
-    background-color: rgb(167, 168, 89);
-    margin-right: 20px;
+    background-color: rgb(143, 89, 121);
     margin-bottom: 20px;
     width: 200px;
     height: 80px;
@@ -38,14 +33,11 @@ h2{
     transition: 0.15s;
     color: #fff;
     cursor: pointer;
-}
-
-.red{
-    background-color: red;
+    margin-right: 20px;
 }
 
 .vinyl-row:hover{
-    background-color: rgb(138, 139, 73);
+    background-color: rgb(121, 72, 101);
 }
 
 
@@ -86,7 +78,7 @@ input{
 button{
     width: 200px;
     height: 35px;
-    margin-top: 30px;
+    margin-top: 20px;
     border: 0;
     background-color: rgb(38, 55, 61);
     font-weight: 700;

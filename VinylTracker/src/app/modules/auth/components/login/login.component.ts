@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { first } from 'rxjs';
+import { USERS } from '../../mock/USERS';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
@@ -10,6 +11,8 @@ import { AuthService } from '../../services/auth.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+
+  wrongPass: boolean = false;
 
   constructor(private router: Router, private authService: AuthService) { }
 
@@ -35,9 +38,22 @@ export class LoginComponent implements OnInit {
     //       this.router.navigate(['/dashboard']);
     //     }
     //   );
-    this.router.navigate(['/dashboard']);
-    this.authService.isLoggedIn = true;
-    this.authService.currentUser = this.form.get('username')?.value!;
+    USERS.map((user) => {
+      if(user.username == this.form.get('username')!.value!)
+      {
+        if(user.password == this.form.get('password')!.value!)
+        {
+          this.router.navigate(['/dashboard']);
+          this.authService.isLoggedIn = true;
+          this.authService.currentUser = this.form.get('username')!.value!;
+        }
+        else
+        {
+          this.wrongPass = true;
+        }
+      }
+    })
+    
   }
 
 }

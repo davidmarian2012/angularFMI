@@ -6,14 +6,24 @@ header{
 }
 
 h3{
-    margin-left: 100px;
+    margin-left: 300px;
     color:#fff;
     font-weight: 500;
+    cursor: pointer;
+    font-size: 22px;
+}
+
+.links{
+    position: absolute;
+    right: 300px;
 }
 
 a{
     text-decoration: none;
     color: #fff;
-    position: absolute;
-    right: 100px;
+    margin-left: 50px;
+}
+
+a:hover{
+    text-decoration: underline;
 }

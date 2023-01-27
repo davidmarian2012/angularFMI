@@ -1,3 +1,23 @@
+.dashboard{
+    height: 90vh;
+    background-color: rgb(214, 214, 214);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+p{
+    font-weight: 400;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+h1{
+    color: #000;
+    margin-bottom: 50px;
+}
+
 .login-container{
     display: flex;
 }
@@ -24,8 +44,8 @@
     justify-content: center;
     align-items: center;
     width: 50%;
-    height: 100vh;
     background-color: rgb(214, 214, 214);
+    height: 100vh;
 }
 
 input{
@@ -35,6 +55,19 @@ input{
     border-radius: 3px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     border: 0;
+}
+
+.saved{
+    color: green;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.text-p{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
 }
 
 button{
@@ -64,14 +97,7 @@ button{
     flex-direction: column;
     gap: 2px;
     font-weight: 500;
-    font-size: 14px;
-}
-
-.wrongPassword{
-    color: red;
-    width: 225px;
-    margin: 3px 0 10px 0;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 a{
@@ -79,13 +105,10 @@ a{
     color: #000;
 }
 
+
 .error-message{
     width: 225px;
     margin: 3px 0 10px 0;
     font-size: 10px;
     color: red;
-}
-
-h1 {
-    color: #fff;
 }

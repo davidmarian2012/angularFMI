@@ -7,7 +7,7 @@
 
     <div class="right-container" [formGroup]="form">
         <div class="input-row">
-            <label for="username">Username</label> <input formControlName="username">
+            <label for="username">Username</label> <input formControlName="username" placeholder="Enter username">
             <div class="error-message">
                 <div *ngIf="form.controls['username'].errors?.['required'] && form.controls['username'].dirty">
                     Username is required.
@@ -21,7 +21,7 @@
             </div>
         </div>
         <div class="input-row">
-            <label for="email">Email</label> <input formControlName="email">
+            <label for="email">Email</label> <input formControlName="email" placeholder="Enter email">
             <div class="error-message">
                 <div *ngIf="form.controls['email'].errors?.['required'] && form.controls['email'].dirty">
                     Email is required.
@@ -32,7 +32,7 @@
             </div>
         </div>
         <div class="input-row">
-            <label for="password">Password</label> <input type="password" formControlName="password">
+            <label for="password">Password</label> <input type="password" formControlName="password" placeholder="Enter password">
             <div class="error-message">
                 <div *ngIf="form.controls['password'].errors?.['required'] && form.controls['password'].dirty">
                     Password is required.
@@ -46,7 +46,7 @@
             </div>
         </div>
         <div class="input-row">
-            <label for="confirmpassword">Confirm Password</label> <input type="password" formControlName="confirmPassword">
+            <label for="confirmpassword">Confirm Password</label> <input type="password" formControlName="confirmPassword" placeholder="Confirm password">
             <div class="error-message">
                 <div *ngIf="form.controls['confirmPassword'].errors?.['required'] && form.controls['confirmPassword'].dirty">
                     Password confirmation is required.
