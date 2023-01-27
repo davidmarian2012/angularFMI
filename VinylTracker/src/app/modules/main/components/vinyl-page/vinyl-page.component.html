@@ -1,0 +1,14 @@
+<app-header></app-header>
+<div class="dashboard">
+
+    <h2 class="top-h2">Vinyl #{{currentVinyl.id}}</h2>
+    
+    <app-vinyl [currentVinyl]="currentVinyl" class="currentv"></app-vinyl>
+    <div class="details">
+        <p>Title: {{currentVinyl.title}}</p>
+        <p>Artist: {{currentVinyl.artist}}</p>
+        <p>Owned by: {{currentVinyl.user}}</p>
+    </div>
+ 
+    <button (click)="back()">Go back</button>
+</div>

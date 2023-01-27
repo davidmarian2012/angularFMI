@@ -1,16 +1,10 @@
 <app-header></app-header>
 <div class="dashboard">
 
-    <h2>Your Collection</h2>
+    <h2 class="top-h2">Your Collection</h2>
     <div class="collection">
         <div *ngFor="let vinyl of vinyls">
-            <div class="vinyl-row" *ngIf="vinyl.user == currentUser">
-                <img src="../../../../../assets/logo.png" alt="Logo" class="logo-img">
-                <div class="vinyl-details">
-                    <h5>{{vinyl.artist}}</h5>
-                    <h3>{{vinyl.title}}</h3>
-                </div>
-            </div>
+            <app-vinyl [currentVinyl]="vinyl" *ngIf="vinyl.user == currentUser"></app-vinyl>
         </div>
     </div>
 
@@ -27,18 +21,10 @@
         </div>
     </div>
 
-    <h2>Others are listening to</h2>
+    <h2>Users are listening to</h2>
     <div class="collection">
         <div *ngFor="let vinyl of vinyls">
-            <div class="vinyl-row-other" *ngIf="vinyl.user != currentUser">
-                <img src="../../../../../assets/logo.png" alt="Logo" class="logo-img">
-                <div class="vinyl-details">
-                    <h5>{{vinyl.artist}}</h5>
-                    <h3>{{vinyl.title}}</h3>
-                    <h6>Owned by {{vinyl.user}}</h6>
-                </div>
-            </div>
-        </div>
+            <app-vinyl [currentVinyl]="vinyl" *ngIf="vinyl.user != currentUser" ngClass="red"></app-vinyl>
     </div>
     
 </div>

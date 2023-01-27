@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { HttpMethods } from '../../shared/enums/http-methods';
 import { HttpService } from '../../shared/services/http.service';
+import { User } from '../interfaces/user';
+import { USERS } from '../mock/USERS';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +15,14 @@ export class AuthService {
   currentUser: string = "";
 
   constructor(private httpService: HttpService, private router: Router) { }
+
+  saveUser(u: User){
+    USERS.push(u);
+  }
+
+  getUsers(){
+    return USERS;
+  }
 
   register(userInput: any): Observable<any> {
     const newUser = {

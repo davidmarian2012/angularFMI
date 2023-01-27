@@ -1,27 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/modules/auth/services/auth.service';
 import { Vinyl } from '../../interfaces/vinyl';
-import { VINYL } from '../../mocking/VINYL';
 import { VinylService } from '../../services/vinyl.service';
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  selector: 'app-vinyl',
+  templateUrl: './vinyl.component.html',
+  styleUrls: ['./vinyl.component.css']
 })
-export class DashboardComponent implements OnInit {
+export class VinylComponent implements OnInit {
+
+  @Input() currentVinyl: Vinyl = {id:0, artist:'', title:'', user:''};
 
   vinyls: Vinyl[] = [];
   currentUser = "";
-  nextId: number = 0;
 
-  constructor(private authService: AuthService, private vinylService: VinylService) { }
+  constructor(private authService: AuthService, private vinylService: VinylService, private router:Router) { }
 
   ngOnInit(): void {
     this.vinyls = this.vinylService.getAllVinyls();
     this.currentUser = this.authService.currentUser;
-    
     //this.currentUser = this.authService.currentUser;
   }
 
@@ -42,19 +42,16 @@ export class DashboardComponent implements OnInit {
       user: '',
     }
 
-    VINYL.map((vinyl)=>{
-      this.nextId = vinyl.id;
-    })
-    this.nextId = this.nextId + 1;
-
-    vinyl.id = this.nextId;
     vinyl.title = this.form.get('title')!.value!;
     vinyl.artist = this.form.get('artist')!.value!;
     vinyl.user = this.authService.currentUser;
 
-    this.form.reset();
     this.vinylService.addVinyl(vinyl);
     console.log(this.currentUser);
+  }
+
+  goToVinyl(){
+    this.router.navigate(['/vinyl', this.currentVinyl.id]);
   }
 
 }

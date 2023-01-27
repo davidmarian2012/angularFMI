@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { first } from 'rxjs';
+import { User } from '../../interfaces/user';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
@@ -36,14 +37,26 @@ export class RegisterComponent implements OnInit {
     ])
   })
 
+  newUser: User = {
+    username: "",
+    password: "",
+    email: ""
+  }
+
   registerUser() {
     this.form.markAllAsTouched();
-    this.authService.register(this.form.value)
-    .pipe(first()).subscribe(
-      () => {
-        this.router.navigate(['/login']);
-      }
-    );
+    this.newUser.username = this.form.get('username')!.value!;
+    this.newUser.password = this.form.get('password')!.value!;
+    this.newUser.email = this.form.get('email')!.value!;
+
+    this.authService.saveUser(this.newUser);
+    this.router.navigate(['/login']);
+    // this.authService.register(this.form.value)
+    // .pipe(first()).subscribe(
+    //   () => {
+    //     this.router.navigate(['/login']);
+    //   }
+    // );
   }
 
 }
